@@ -1,0 +1,11 @@
+<server description="Deber08">
+<featureManager>
+  <feature>jaxrs-2.1</feature>
+   <feature>cdi-2.0</feature>
+    <feature>jpa-2.2</feature>
+</featureManager>
+
+<httpEndpoint httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint" host="*"/>
+	<applicationManager autoExpand="true"/>
+</server>
+<!-- jaxrs-2.1 cdi-2.0 jpa-2.1 microProfile-3.2-->

@@ -1,0 +1,35 @@
+
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "gradle.plugin.fish.payara.gradle.plugins:payara-micro-gradle-plugin:1.0.3"
+	}
+}
+
+apply plugin: "war"
+apply plugin: "fish.payara.micro-gradle-plugin"
+
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compile group: 'javax', name: 'javaee-api', version: '8.0.1'
+//providedCompile group: 'org.eclipse.microprofile', name: 'microprofile', version: '3.2'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+//	compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+	compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
+	
+}
+
+payaraMicro {
+    payaraVersion = '5.194'
+    deployWar = true
+    useUberJar = true
+    daemon = false
+}
